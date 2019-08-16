@@ -34,7 +34,6 @@
             <Import-Package>org.osgi.framework,org.osgi.service.packageadmin,org.osgi.service.url,org.osgi.service.startlevel,org.osgi.util.tracker,*</Import-Package>
             <Export-Package>ca.redtoad.osgi.host</Export-Package>
             <Embed-Dependency>*;artifactId=org.apache.felix.framework;inline=true</Embed-Dependency>
-            <Bundle-Activator>ca.redtoad.osgi.host.Activator</Bundle-Activator>
           </instructions>
         </configuration>
       </plugin>
