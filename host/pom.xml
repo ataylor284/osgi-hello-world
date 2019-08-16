@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>bundle</packaging>
+
+  <groupId>ca.redtoad</groupId>
+  <artifactId>osgi-hello-world-host</artifactId>
+  <version>1.0.0</version>
+  <name>OSGI Hello World Host</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.framework</artifactId>
+      <version>4.0.2</version>
+    </dependency>
+  </dependencies>
+
+  <properties>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>4.2.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Main-Class>ca.redtoad.osgi.host.Main</Main-Class>
+            <Import-Package>org.osgi.framework,org.osgi.service.packageadmin,org.osgi.service.url,org.osgi.service.startlevel,org.osgi.util.tracker,*</Import-Package>
+            <Export-Package>ca.redtoad.osgi.host</Export-Package>
+            <Embed-Dependency>*;artifactId=org.apache.felix.framework;inline=true</Embed-Dependency>
+            <Bundle-Activator>ca.redtoad.osgi.host.Activator</Bundle-Activator>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
